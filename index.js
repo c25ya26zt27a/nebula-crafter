@@ -109,3 +109,50 @@ class NebulaSimulator {
   private clouds: number = 0;
 
   constructor() {
+    this.stars = randomInt(100, 500);
+    this.clouds = randomInt(5, 20);
+  }
+
+  startSimulation() {
+    logStatus('Starting Nebula Simulation...');
+    this.generateStars();
+    this.generateClouds();
+    logStatus('Simulation Completed.');
+  }
+
+  private generateStars() {
+    for (let i = 0; i < this.stars; i++) {
+      simulateElement(i);
+    }
+  }
+
+  private generateClouds() {
+    generateRandomClouds(this.clouds);
+  }
+}
+
+const simulator = new NebulaSimulator();
+simulator.startSimulation();
+
+function endlessLog() {
+  for (let i = 0; i < 20; i++) {
+    console.log(`Endless log ${i}`);
+  }
+}
+endlessLog();
+
+// ---- 一些无意义的小方法 ---- //
+
+function alpha() { console.log('alpha'); }
+function beta() { console.log('beta'); }
+function gamma() { console.log('gamma'); }
+function delta() { console.log('delta'); }
+function epsilon() { console.log('epsilon'); }
+function zeta() { console.log('zeta'); }
+function eta() { console.log('eta'); }
+function theta() { console.log('theta'); }
+function iota() { console.log('iota'); }
+function kappa() { console.log('kappa'); }
+
+alpha(); beta(); gamma(); delta(); epsilon();
+zeta(); eta(); theta(); iota(); kappa();
